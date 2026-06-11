@@ -935,8 +935,8 @@ startup();
 /* ══ LOGIN ══ */
 let pinBuf='', selIdx=0;
 function selUser(i){ selIdx=i; document.querySelectorAll('.ucard').forEach((c,j)=>c.classList.toggle('sel',i===j)); pinBuf=''; updateDots(); document.getElementById('lerr').textContent=''; }
-function updateDots(){ for(let i=0;i<4;i++) document.getElementById('pd'+i).classList.toggle('on',i<pinBuf.length); }
-function pk(k){ if(pinBuf.length>=4)return; pinBuf+=k; updateDots(); if(pinBuf.length===4)setTimeout(pok,100); }
+function updateDots(){ for(let i=0;i<6;i++) document.getElementById('pd'+i).classList.toggle('on',i<pinBuf.length); }
+function pk(k){ if(pinBuf.length>=6)return; pinBuf+=k; updateDots(); if(pinBuf.length===6)setTimeout(pok,100); }
 function pdel(){ pinBuf=pinBuf.slice(0,-1); updateDots(); }
 function pok(){
   const user=USERS[selIdx];
